@@ -1,0 +1,14 @@
+@use './utils/index' as *;
+
+
+// Layout
+@use './components/index' as *;
+@use './layouts/header';
+@use './layouts/hero';
+@use './layouts/how-it-works';
+@use './layouts/pricing';
+@use './layouts/faq';
+@use './layouts/blog';
+
+@use './layouts/projects';
+@use './layouts/footer';

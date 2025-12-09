@@ -1,0 +1,33 @@
+@use './breakpoints' as *;
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 80px;
+
+    // 1280px ↓
+    @include respond-to("xl") {
+        padding: 60px;
+    }
+
+    // 1024px ↓
+    @include respond-to("lg") {
+        padding: 48px;
+    }
+
+    // 768px ↓
+    @include respond-to("md") {
+        padding: 32px;
+    }
+
+    // 640px ↓
+    @include respond-to("sm") {
+        padding: 24px;
+    }
+
+    // 480px ↓
+    @include respond-to("xs") {
+        padding: 16px;
+    }
+}

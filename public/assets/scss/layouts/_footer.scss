@@ -1,0 +1,172 @@
+@use '../utils/index' as *;
+
+.footer {
+    background: $color-cream;
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        @include respond-to('md') {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__desc {
+        margin-top: 20px;
+    }
+
+    &__top-middle {
+        max-width: 500px;
+    }
+
+    &__text {
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                color: $color-deep-red;
+            }
+        }
+    }
+
+    &__info-wrap {
+        margin-top: 2rem;
+    }
+
+    &__info-label,
+    &__info-link {
+        color: $color-secondary;
+        line-height: 150%;
+    }
+
+    .newsletter {
+        &__title {
+            font-size: 1.7rem;
+            font-weight: 500;
+            line-height: 33px;
+        }
+
+        &__desc {
+            max-width: 274px;
+            margin-top: 1rem;
+        }
+
+        &__form {
+            margin-top: 2.5rem;
+        }
+
+        &__input-wrap {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+
+        &__input-label {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: $color-dark-gray;
+        }
+
+        &__input,
+        &__select {
+            padding: 0.75rem 0;
+            font-size: 1rem;
+            border: none;
+            background: transparent;
+            border-bottom: 1px solid $color-light-gray;
+
+            &:focus {
+                border-color: $color-deep-red;
+                outline: none;
+            }
+        }
+
+        &__submit-btn {
+            background: $color-deep-red;
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            box-shadow: none;
+            border-radius: 32px;
+            color: $color-white;
+            font-weight: 500;
+            line-height: 1.25;
+            cursor: pointer;
+        }
+    }
+
+    &__right-bottom {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 5rem;
+    }
+
+    &__links-title {
+        color: $color-dark-green;
+        margin-bottom: 1.5rem;
+    }
+
+    &__link-item {
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    &__link-text {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: $color-secondary;
+        text-decoration: none;
+    }
+
+    &__bottom {
+        background: $color-secondary;
+
+        &-container {
+            padding: 2rem 0;
+        }
+    }
+
+    &__bottom-content {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond-to('md') {
+            justify-content: center;
+        }
+    }
+
+    &__copyright-text {
+        color: $color-white;
+    }
+
+    &__bottom-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        a {
+            color: $color-white;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

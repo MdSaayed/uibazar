@@ -1,0 +1,187 @@
+@use '../utils/index' as *;
+
+.faq {
+    background: $color-cream;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+    }
+
+    &__title {
+        max-width: 300px;
+    }
+
+    &__desc {
+        font-size: 18px;
+        color: $color-secondary;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: -0.3px;
+        max-width: 385px;
+    }
+
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding-right: 6rem;
+
+        @include respond-to('xl') {
+            padding-right: 4rem;
+        }
+
+        @include respond-to('lg') {
+            padding-right: 0;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__info-item {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        column-gap: 2.5rem;
+        row-gap: 1rem;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 8px 0;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__info-item-title,
+    &__info-item-value {
+        color: $color-secondary;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.4px;
+    }
+
+
+    &__bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 5rem;
+
+        @include respond-to('lg') {
+            grid-template-columns: 1fr;
+        }
+
+        @include respond-to("xl") {
+            margin-top: 4rem;
+        }
+
+        @include respond-to("md") {
+            margin-top: 3.5rem;
+        }
+
+        @include respond-to("sm") {
+            margin-top: 3rem;
+        }
+
+        @include respond-to("xs") {
+            margin-top: 2.5rem;
+        }
+    }
+
+    &__item {
+        padding: 1.4rem 1.5rem;
+        overflow: hidden;
+        transition: padding 0.6s ease;
+        background: $color-light;
+        margin-bottom: 1rem;
+        border-radius: 4px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &--active {
+            .faq__toggle svg {
+                transform: rotate(135deg);
+            }
+
+            .faq__answer {
+                height: auto;
+                opacity: 1;
+                margin-top: 2rem;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1.5;
+                color: var(--gray-base);
+                -webkit-text-stroke-color: var(--border-color);
+
+                @include respond-to('xs') {
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+        @include respond-to('xs') {
+            padding: 1.4rem 1rem;
+        }
+    }
+
+    &__answer {
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        margin-top: 0;
+        transition: height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+        font-size: 1rem;
+
+        &-answer-text {
+            color: $color-secondary;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    }
+
+    &__question-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    &__question {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 1rem;
+
+        &-text {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%;
+            letter-spacing: -0.3px;
+            flex: 1;
+            color: $color-secondary;
+        }
+    }
+
+    &__toggle {
+        font-size: 1rem;
+        border: none;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        background: transparent;
+
+        svg {
+            transition: transform 0.6s ease;
+            transform-origin: center;
+        }
+    }
+}

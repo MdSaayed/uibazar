@@ -1,0 +1,55 @@
+@use '../utils/index' as *;
+
+.header {
+    &--one {
+        background-color: $color-cream;
+    }
+
+    &__container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        @media (min-width:1200px) {
+            padding: 1rem 4rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        background: $color-white;
+        border-radius: 0.75rem;
+    }
+
+    &__logo-wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav-menu {
+        display: flex;
+        align-items: center;
+
+        @include respond-to('lg') {
+            display: none;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        li a {
+            text-decoration: none;
+            color: $color-secondary;
+        }
+    }
+
+    &__toggle {
+        display: flex;
+        align-items: center;
+    }
+}

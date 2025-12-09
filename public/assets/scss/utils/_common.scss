@@ -1,0 +1,18 @@
+@use './variables' as *;
+
+body {
+    font-family: 'GeneralSans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'BricolageGrotesque', sans-serif;
+}
+
+a:hover {
+    color: $color-deep-red;
+}

@@ -1,0 +1,183 @@
+@use '../utils/index' as *;
+@use '../utils/breakpoints' as *;
+
+.pricing {
+    background: $color-light;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        align-items: end;
+    }
+
+    &__desc {
+        max-width: 460px;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 5rem;
+        gap: 1rem;
+        background: $color-dark-gray;
+        border-radius: 16px;
+        padding: 1rem;
+
+        @include respond-to("xl") {
+            margin-top: 4rem;
+        }
+
+        @include respond-to("lg") {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @include respond-to("md") {
+            margin-top: 3.5rem;
+        }
+
+        @include respond-to("sm") {
+            margin-top: 3rem;
+        }
+
+        @include respond-to("xs") {
+            margin-top: 2.5rem;
+        }
+    }
+
+    .card {
+        padding: 1.5rem 1rem;
+        border-radius: 8px;
+
+        &--light {
+            background: #E5E5E5;
+        }
+
+        &--dark {
+            background: $color-dark-gray;
+        }
+
+        &__top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: start;
+            justify-content: space-between;
+
+            &-left {
+                max-width: 560px;
+            }
+        }
+
+        &__brand-wrap {
+            margin-bottom: 1rem;
+        }
+
+        &__plan-name {
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 33.6px;
+            letter-spacing: 1px;
+            color: $color-dark-gray;
+            margin-bottom: 8px;
+        }
+
+        &__price {
+            font-size: 3rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 120%;
+            letter-spacing: -3px;
+            color: $color-dark-gray;
+
+            @include respond-to("md") {
+                font-size: 2.5rem;
+            }
+        }
+
+        &__period {
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 130%;
+            color: $color-dark-gray;
+
+            @include respond-to("md") {
+                font-size: 2rem;
+            }
+        }
+
+        &__divider {
+            background-color:  #bdb2b4;
+            margin: 2rem 0;
+            border: none;
+            height: 1px;
+        }
+
+        &__includes-label {
+            font-size: 1.2rem;
+            color: $color-black;
+            font-weight: 500;
+            line-height: 150%;
+            margin-bottom: 1.5rem;
+        }
+
+        &__features {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__feature-item {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            color: $color-secondary;
+            flex: 1 300px;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &--dark {
+            .card {
+
+                &__plan-name,
+                &__subtext,
+                &__price,
+                &__period {
+                    color: #E5E5E5;
+                }
+
+                &__divider {
+                    color: $color-secondary;
+                }
+
+                &__feature-item,
+                &__includes-label {
+                    color: #E5E5E5;
+                }
+            }
+        }
+
+        &__btn {
+            background: $color-dark-gray;
+            color: $color-white;
+            padding: 1rem 1.5rem;
+            border-radius: 32px;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 2rem;
+
+            &--light {
+                background-color: $color-light;
+                color: $color-secondary;
+            }
+        }
+    }
+
+}
