@@ -1,0 +1,38 @@
+@use '../utils/index' as *;
+
+.blog-card {
+    &__meta {
+        margin-bottom: 1rem;
+    }
+
+    &__date {
+        font-size: 14px;
+        color: $color-dark-green;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 170%;
+        letter-spacing: -0.3px;
+        display: block;
+    }
+
+    &__thumbnail-wrap {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        color: #03261C;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 140%;
+        letter-spacing: -0.3px;
+        margin-top: 1.2rem;
+    }
+}

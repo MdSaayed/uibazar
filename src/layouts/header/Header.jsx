@@ -20,7 +20,7 @@ const Header = () => {
                                 <a href="/projects" className="header__nav-link">Projects</a>
                             </li>
                             <li className="header__nav-item">
-                                <a href="/articles" className="header__nav-link">Articles</a>
+                                <a href="/blog-details" className="header__nav-link">Blog Single</a>
                             </li>
                         </ul>
                     </div>

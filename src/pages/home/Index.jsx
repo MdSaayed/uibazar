@@ -6,12 +6,14 @@ import Blog from './Blog';
 import Faq from './Faq';
 import HowItWorks from '../../components/elements/HowItWorks';
 import Pricing from './pricing';
+import Testimonials from './Testimonials';
 
 const Home = () => {
     return (
         <>
             <Header />
             <Hero />
+            <Testimonials />
             <HowItWorks />
             <Pricing />
             <Faq />

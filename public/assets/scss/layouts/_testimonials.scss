@@ -1,0 +1,133 @@
+@use '../utils/index' as *;
+@use '../utils/breakpoints' as *;
+
+.testimonials {
+    background: $color-dark-gray;
+
+
+    &__subtitle {
+        color: #E5E5E5;
+    }
+
+    .subtitle-shape {
+        filter: invert(1) brightness(2);
+    }
+
+    &__content {
+        margin-top: 5rem;
+        position: relative;
+
+    }
+
+    &__title {
+        color: #E5E5E5;
+        font-size: 13.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 226.4px;
+        letter-spacing: -22.6px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 1;
+
+        @include respond-to('xl') {
+            font-size: 11.25rem;
+        }
+
+        @include respond-to('lg') {
+            font-size: 9rem;
+        }
+
+        @include respond-to('md') {
+            font-size: 7.5rem;
+        }
+    }
+
+    &__desc {
+        color: #E5E5E5;
+        max-width: 500px;
+        margin-top: 4px;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        max-height: 100vh;
+        min-height: fit-content;
+        padding-bottom: 4rem;
+    }
+
+    &__item {
+        background: #E5E5E5;
+        max-width: 480px;
+        padding: 2rem;
+        border-radius: 8px;
+        position: sticky;
+        top: 50px;
+        background: #E5E5E5;
+        z-index: calc(10 + var(--i));
+        transform: translateY(calc(var(--i) * 40px)) rotate(calc(var(--i) * 1deg));
+        transition: 0.35s ease;
+
+        &:last-child {
+            margin-bottom: 3rem;
+        }
+
+        @include respond-to('md') {
+            padding: 1.5rem;
+        }
+
+        @include respond-to('sm') {
+            padding: 1rem;
+        }
+
+        &-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        &-date {
+            font-size: 16px;
+            color: $color-secondary;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: -0.3px;
+        }
+
+        &-text {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: -0.3px;
+            color: $color-black;
+            margin-bottom: 1rem;
+        }
+
+        &-author-name {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 150%;
+            letter-spacing: -0.3px;
+            margin-bottom: 8px;
+            color: $color-black;
+        }
+
+        &-author-role {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: 0.4px;
+        }
+    }
+}
